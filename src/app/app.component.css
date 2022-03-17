@@ -1,11 +1,51 @@
-mat-card {
+body {
+    width: 100%;
+    height: 100%;
+    background: aquamarine;
+}
+.wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     position:absolute;
     left:50%;
     top:50%;
     transform : translate(-50%,-50%);
+    margin: 0px;
 }
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    font-size: larger;
+}
+
+.input-btn {
+    display: flex;
+    flex-direction: row;
+
+}
+
+mat-form-field {
+    border-top: 0px;
+    flex-grow: 1;
+}
+
+.tarefa {
+    flex-grow: 1;
+}
+
+.itens-btn {
+    display:flex;
+    flex-direction: row;
+}
+
+.btn {
+    width: 40px;
+    height: 45px;
+    margin-left: 16px;
+    justify-content: center;
+}
+
 

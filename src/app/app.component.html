@@ -1,22 +1,28 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>ToDo App</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <mat-form-field>
-      <mat-label>Atividade</mat-label>
-      <input matInput placeholder="Adicione uma tarefa" [value]="tarefa" (change)="onChangeInput($event)">
-    </mat-form-field>
-    <button mat-raised-button color="primary" (click)="adiciona()">+</button>
-    <div *ngFor="let item of itens; let i=index;">
-      <p>{{ item }}</p>
-      <button mat-raised-button color="warn" (click)="remove(i)">-</button>
-    </div>
-  </mat-card-content>
-  <mat-card-footer>
-    <div>
-      Você tem {{ itens.length }} tarefas pendentes
-    </div>
-    <button mat-raised-button color="primary" (click)="limparToDo()">Limpar tudo</button>
-  </mat-card-footer>
-</mat-card>
+<body>
+  <div class="wrapper">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>ToDo App</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="conteudo">
+        <div class="input-btn">
+          <mat-form-field>
+            <mat-label>Atividade</mat-label>
+            <input matInput placeholder="Adicione uma tarefa" [value]="tarefa" (change)="onChangeInput($event)">
+          </mat-form-field>
+          <button class="btn" mat-raised-button color="primary" (click)="adiciona()"><mat-icon>add</mat-icon></button>
+        </div>
+        <div class="itens-btn" *ngFor="let item of itens; let i=index;">
+          <p class="tarefa">{{ item }}</p>
+          <button class="btn" mat-raised-button color="warn"  (click)="remove(i)"><mat-icon>delete</mat-icon></button>
+        </div>
+      </mat-card-content> 
+      <div class="itens-btn">
+        <mat-card-footer>
+          Você tem {{ itens.length }} tarefas pendentes
+          <button mat-raised-button color="primary" (click)="limparToDo()">Limpar tudo</button>
+        </mat-card-footer>
+      </div>
+    </mat-card>
+  </div>
+</body>
